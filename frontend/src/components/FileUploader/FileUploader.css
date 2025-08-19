@@ -1,0 +1,25 @@
+.fileUploader {
+  margin-bottom: 20px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.uploadButton:hover {
+  background-color: #45a049;
+}

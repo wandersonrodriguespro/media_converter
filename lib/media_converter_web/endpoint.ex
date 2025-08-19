@@ -53,6 +53,9 @@ defmodule MediaConverterWeb.Endpoint do
 
   plug CORSPlug,
     origin: ["http://localhost:5173"],
-    methods: ["GET", "POST", "OPTIONS"],
-    headers: ["content-type"]
+    methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
+    headers: ["Content-Type", "Authorization", "Accept"],
+    expose: ["Content-Type"],
+    credentials: true,
+    max_age: 600
 end

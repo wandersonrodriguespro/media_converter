@@ -6,6 +6,8 @@ defmodule MediaConverterWeb.Router do
     plug CORSPlug
   end
 
+  options "/api/convert", MediaConverterWeb.OptionsController, :options
+
   scope "/api", MediaConverterWeb do
     pipe_through :api
     post "/convert", ConversionController, :create

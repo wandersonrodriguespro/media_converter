@@ -8,10 +8,7 @@ defmodule MediaConverterWeb.ConversionController do
         "image/gif" ->
           MediaConverterService.convert_gif_to_mp4(upload.path, Path.rootname(upload.filename))
 
-        "image/png" ->
-          MediaConverterService.convert_to_webp(upload.path, Path.rootname(upload.filename))
-
-        "image/jpeg" ->
+        content_type when content_type in ["image/png", "image/jpeg"] ->
           MediaConverterService.convert_to_webp(upload.path, Path.rootname(upload.filename))
 
         _ ->
@@ -34,7 +31,7 @@ defmodule MediaConverterWeb.ConversionController do
 
       {:error, reason} ->
         conn
-        |> put_status(500)
+        |> put_status(400)
         |> json(%{error: "Conversion failed: #{inspect(reason)}"})
         |> halt()
     end

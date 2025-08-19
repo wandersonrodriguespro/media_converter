@@ -1,0 +1,22 @@
+.convertButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.convertButton:hover:not(:disabled) {
+  opacity: 0.9;
+  background-color: #45a049;
+}
+
+.convertButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
